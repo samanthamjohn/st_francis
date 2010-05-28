@@ -1,4 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :volunteer_programs
+
+  map.resources :client_programs
+
+  map.resources :client_events
+
+  map.resources :volunteer_events
+
   map.resources :events
 
   map.resources :volunteers
@@ -12,9 +20,14 @@ ActionController::Routing::Routes.draw do |map|
   map.register '/register', :controller => 'users', :action => 'create'
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.resources :users
-
   map.resource :session
 
+  map.event_client 'event/:id/clients', :controller => "client_events", :action => "new"
+  map.event_volunteer 'event/:id/volunteers', :controller => "volunteer_events", :action => "new"
+  
+  map.program_client 'program/:id/clients', :controller => "client_programs", :action => "new"
+  map.program_volunteer 'program/:id/volunteers', :controller => "volunteer_programs", :action => "new"
+  #map.volunteer '/volunteer', :controller => 'volunteer_events', :action => 'create'
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

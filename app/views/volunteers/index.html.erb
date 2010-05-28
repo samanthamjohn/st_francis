@@ -6,9 +6,8 @@
 
 <% @volunteers.each do |volunteer| %>
   <tr>
-    <td><%= link_to 'Show', volunteer %></td>
-    <td><%= link_to 'Edit', edit_volunteer_path(volunteer) %></td>
-    <td><%= link_to 'Destroy', volunteer, :confirm => 'Are you sure?', :method => :delete %></td>
+	<td><%= link_to "#{volunteer.first_name} #{volunteer.last_name}", volunteer %></td></tr><tr>
+    <!--<td><%= link_to 'Show', volunteer %>&nbsp<%= link_to 'Edit', edit_volunteer_path(volunteer) %>&nbsp<%= link_to 'Destroy', volunteer, :confirm => 'Are you sure?', :method => :delete %></td>-->
   </tr>
 <% end %>
 </table>

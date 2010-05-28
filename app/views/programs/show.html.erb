@@ -1,3 +1,19 @@
 
+<h1><%= @program.name%></h1>
+<p><b>Date:</b> <%= @program.start_date.month%>/<%=  @program.start_date.day%>/<%= @program.start_date.year%></p>
+<p><b>Description</b> <%= @program.description%></p>
+<b><%= link_to "add new volunteers", program_volunteer_path %></b><br>
+<h3>Volunteers</h3>
+<% @program.volunteers.each do |volunteer|%>
+<%= link_to "#{volunteer.first_name} #{volunteer.last_name}", volunteer %><br>
+<%end%>
+
+<b><%= link_to "add new clients", program_client_path %></b><br>
+
+<h3>Clients</h3>
+<% @program.clients.each do |client|%>
+<%= link_to "#{client.first_name} #{client.last_name}", client %><br>
+<%end%>
+
 <%= link_to 'Edit', edit_program_path(@program) %> |
 <%= link_to 'Back', programs_path %>

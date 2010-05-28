@@ -1,0 +1,12 @@
+<h1>Editing volunteer_event</h1>
+
+<% form_for(@volunteer_event) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @volunteer_event %> |
+<%= link_to 'Back', volunteer_events_path %>

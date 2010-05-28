@@ -1,0 +1,18 @@
+<h1>Listing client_events</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% @client_events.each do |client_event| %>
+  <tr>
+    <td><%= link_to 'Show', client_event %></td>
+    <td><%= link_to 'Edit', edit_client_event_path(client_event) %></td>
+    <td><%= link_to 'Destroy', client_event, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New client_event', new_client_event_path %>

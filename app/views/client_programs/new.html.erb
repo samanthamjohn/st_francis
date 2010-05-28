@@ -1,0 +1,13 @@
+<h1>Check client's name to add them to <%= @program.name%></h1>
+<h3>Registered Clients</h3>
+<% form_for(@client_program) do |f| %>
+	<% @clients.each do |client|%>
+		<%= check_box_tag "client_ids[]", client.id%>	
+		<%= link_to "#{client.first_name} #{client.last_name}", client %><br/>
+	<%end%>
+	<%= hidden_field :program, :id %>
+    <p><%= f.submit 'Create' %></p>
+<%end%>
+
+
+<%= link_to 'Back', @program %>

@@ -1,0 +1,18 @@
+<h1>Listing volunteer_programs</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% @volunteer_programs.each do |volunteer_program| %>
+  <tr>
+    <td><%= link_to 'Show', volunteer_program %></td>
+    <td><%= link_to 'Edit', edit_volunteer_program_path(volunteer_program) %></td>
+    <td><%= link_to 'Destroy', volunteer_program, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New volunteer_program', new_volunteer_program_path %>

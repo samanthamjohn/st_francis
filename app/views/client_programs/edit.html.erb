@@ -1,0 +1,12 @@
+<h1>Editing client_program</h1>
+
+<% form_for(@client_program) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @client_program %> |
+<%= link_to 'Back', client_programs_path %>

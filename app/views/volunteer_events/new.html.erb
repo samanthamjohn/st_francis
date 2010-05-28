@@ -1,0 +1,14 @@
+<h1>Check volunteer's name to add them to <%= @event.name%></h1>
+<h3>Registered Volunteers</h3>
+
+<% form_for(@volunteer_event) do |f| %>
+	<% @volunteers.each do |volunteer|%>
+	<%= check_box_tag "volunteer_ids[]", volunteer.id%>	
+	<%= link_to "#{volunteer.first_name} #{volunteer.last_name}", volunteer %><br/>
+	<%end%>
+	<%= hidden_field :event, :id %>
+    <p><%= f.submit 'Create' %></p>
+<%end%>
+
+
+<%= link_to 'Back', @event %>
